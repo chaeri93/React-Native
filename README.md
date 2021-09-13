@@ -1,2 +1,4 @@
 # hello-world
-Open Software Program
+Chaeri Kim
+
+repository for Open Software Program
