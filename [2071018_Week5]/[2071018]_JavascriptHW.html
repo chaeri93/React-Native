@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body onload="init()">
+    <form name = "test" onSubmit = "register()" onReset = "reWrite()">
+    ID: <input type = "text" name = "id" size = "20" value = "" id="ppl_id" onchange="changeDetect()"><p>
+    Password: <input type = "password" name = "password" size = "10" value = "" id="ppl_password" onchange="change_pass()"><p>
+    <input type = "submit" name = "btn1" value = "Register">
+    <input type = "reset" name = "btn2" value = "Reset">
+    </form>
+    <script = "text/javascript">
+     function register()
+     {
+        var element = document.getElementById('ppl_id');
+        var element1 = document.getElementById('ppl_password');
+        if ((element1.value==''||element1.value==null) && (element.value==''||element.value==null)) {
+          alert("ID와 패스워드를 입력하세요");
+        }
+        else if(element.value==''||element.value==null){
+          alert("ID를 입력하세요");
+        }
+        else if(element1.value==''||element1.value==null){
+          alert("패스워드를 입력하세요");
+        }
+        else {
+          document.test.submit();
+          alert("Welcome");
+        }
+      }
+     function reWrite()
+     {
+        document.test.reset();
+        alert("Please enter it again");
+      }
+      function init(){
+        document.test.id.focus();
+      }
+      var x=0;
+      function changeDetect(){
+        if (x===0) {
+          x=1;
+        }
+        else {
+          alert("ID가 변경되었습니다");
+        }
+      }
+      function change_pass(){
+        var val = document.getElementById('ppl_password').value;
+        if (val.length>12 || val.length<8) {
+          alert("8자 이상 12자 이하로 입력해주세요");
+        }
+      }
+    </script>
+  </body>
+</html>
